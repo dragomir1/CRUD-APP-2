@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title></title>
+  </head>
+  <body>
+    <h3>Name: <%= user.name %></h3>
+    <h3>location: <%= user.location %></h3>
+    <h3>Favorite language: <%= user.language %></h3>
+    <h3>Comments: <%= user.comment %></h3>
+
+    <form action="/edit/<%= user._id %>" method="POST">
+      <button>Edit This User</button>
+    </form>
+
+    <form action="/destroy/<%= user._id %>" method="POST">
+      <button class="btn btn-default">Delete User</button>
+    </form>
+
+    <a href="/"><button>Back to UserDashboard</button></a>
+
+  </body>
+</html>

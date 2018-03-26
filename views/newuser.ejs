@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title></title>
+</head>
+<body>
+  <% if(typeof(errors) != 'undefined' ) { %>
+     <% for (var x in errors) { %>
+      <div class="alert alert-danger" role="alert"> <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> <%= errors[x].message %></div>
+      <% } %>
+   <% } %>
+    <div class="userform">
+      <h1>Add a New User to the Dashboard</h1>
+      <form action="/addUserForm" class="form-group" method="POST">
+        <label for="name">Your name: </label>
+        <input type="text" name="name" class="form-control">
+        <label for="location">where do you live?: </label>
+        <input type="text" name="location" class="form-control">
+        <label for="language">What is your favorite programming Language: </label>
+        <input type="text" name="language" class="form-control">
+        <label for="comment">Comments: (Optional)</label>
+        <textarea name="comment" class="form-control"></textarea>
+        <input type="submit" value="Submit New user">
+      </form>
+      <a href="/"><button>Back</button></a>
+    </div>
+
+</body>
+</html>
